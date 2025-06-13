@@ -6,13 +6,19 @@ import Image from "next/image";
 import { robotoMono, text_variant } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import { handleContactForm } from "@/app/actions/contact";
+import { ContactFormState, handleContactForm } from "@/app/actions/contact";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
 import { useActionState, useEffect, useState, useTransition } from "react";
 
 const Footer = () => {
-  const [state, formAction] = useActionState(handleContactForm, null);
+  const [state, formAction] = useActionState<ContactFormState | null, FormData>(
+    async (_prevState: ContactFormState | null, formData: FormData) => {
+      return await handleContactForm(_prevState, formData);
+    },
+    null
+  );
+
   const [showAlert, setShowAlert] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -40,7 +46,7 @@ const Footer = () => {
             className="flex flex-col items-start justify-start gap-4"
           >
             <h1 className="text-3xl md:text-5xl font-bold">
-              Let's work together on <br /> your next project
+              Let&apos;s work together on <br /> your next project
             </h1>
             <p className="text-sm sm:text-base">
               Send me an email or message me — I’d love to help!

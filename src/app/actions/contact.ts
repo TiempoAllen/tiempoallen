@@ -11,7 +11,15 @@ const ContactFormSchema = z.object({
   message: z.string().min(1),
 });
 
-export async function handleContactForm(prevState: any, formData: FormData) {
+export type ContactFormState = {
+  success: boolean;
+  message: string;
+};
+
+export async function handleContactForm(
+  prevState: ContactFormState | null,
+  formData: FormData
+) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
