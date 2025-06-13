@@ -50,7 +50,7 @@ const Name = () => {
           className="relative rounded-full overflow-hidden shadow-[-20px_20px_100px_rgba(255,255,255,0.15)] hover:shadow-2xl transition-shadow duration-300 w-48 h-48 sm:w-72 sm:h-72 lg:w-[500px] lg:h-[500px]"
         >
           <Image
-            src="/name/grad-pic.jpg"
+            src="/name/grad-pic.JPG"
             alt="Allen Tiempo"
             fill
             className="object-cover"
