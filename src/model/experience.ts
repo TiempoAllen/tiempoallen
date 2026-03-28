@@ -4,6 +4,7 @@ export default class Experience {
   description: string;
   dateRange: string;
   companyLogo: string;
+  typeOfWork: string;
   skills: string[];
 
   constructor(
@@ -12,13 +13,15 @@ export default class Experience {
     description: string,
     dateRange: string,
     companyLogo: string,
-    skills: string[]
+    typeOfWork: string,
+    skills: string[],
   ) {
     this.id = id;
     this.header = header;
     this.description = description;
     this.dateRange = dateRange;
     this.companyLogo = companyLogo;
+    this.typeOfWork = typeOfWork;
     this.skills = skills;
   }
 }
@@ -30,7 +33,8 @@ export const EXPERIENCE_DATA: Experience[] = [
     "Converted forms to e-forms using CodeIgniter, HTML, CSS, and JavaScript.",
     "Jun 2024 - Jul 2024",
     "consultare-logo",
-    ["JavaScript", "HTML", "CSS", "CodeIgniter", "PHP", "MySQL"]
+    "Remote",
+    ["JavaScript", "HTML", "CSS", "CodeIgniter", "PHP", "MySQL"],
   ),
   new Experience(
     "2",
@@ -38,7 +42,8 @@ export const EXPERIENCE_DATA: Experience[] = [
     "Worked on UI/UX design of e-forms using Figma. Help developed a Learning Management System (LMS) using Quasar, Laravel, and MySQL.",
     "Aug 2024 - Dec 2024",
     "consultare-logo",
-    ["Quasar", "VueJS", "JS", "Figma", "Laravel", "MySQL", "PHP"]
+    "Remote",
+    ["Quasar", "VueJS", "JS", "Figma", "Laravel", "MySQL", "PHP"],
   ),
   new Experience(
     "3",
@@ -46,6 +51,16 @@ export const EXPERIENCE_DATA: Experience[] = [
     "Improved user experience by designing and implementing a new UI for the company's web application using Figma",
     "Jan 2025 - Apr 2025",
     "sparksoft-logo",
-    ["Figma", "User Experience", "User Interface"]
+    "Remote",
+    ["Figma", "User Experience", "User Interface"],
+  ),
+  new Experience(
+    "4",
+    "Associate Software Engineer @ Accenture",
+    "Worked on a project that involved developing a web application using ServiceNow. Collaborated with a team of developers to implement new features and improve the overall functionality of the application.",
+    "Aug 2025 - Present",
+    "Accenture-logo",
+    "Hybrid",
+    ["ServiceNow", "Software Development", "Agile Methodologies"],
   ),
 ];

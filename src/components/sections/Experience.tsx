@@ -32,7 +32,7 @@ const Experience = () => {
           <Accordion
             type="single"
             collapsible
-            defaultValue={EXPERIENCE_DATA[0].id}
+            defaultValue={EXPERIENCE_DATA[3].id}
             className="flex flex-col gap-3 w-full"
           >
             {EXPERIENCE_DATA.map((experience) => (
@@ -52,7 +52,9 @@ const Experience = () => {
                     <div className="flex flex-col gap-2 flex-1">
                       <div className="flex items-center justify-start gap-2">
                         <MapPinIcon className="text-purple-700" />
-                        <p className="text-sm text-gray-300">Remote</p>
+                        <p className="text-sm text-gray-300">
+                          {experience.typeOfWork}
+                        </p>
                       </div>
                       <p className="text-base sm:text-lg">
                         {experience.description}
